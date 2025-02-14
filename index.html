@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <h1 id="question">
+            <img id='photo' src="dudu-kiss-dudu-roses.gif" title="Bear with rose.">
+            <br>
+            つきあてくれませんか？
+            <br>
+            <div id="button" style = "margin:'50%'">
+                <button id="Yes-button" onclick="selectOption('yes')">うん</button>
+                <button id="No-button" onclick="selectOption('no')" class="button1">いいえ</button>
+            </div>
+            </h1>
+        <script>
+            function selectOption(option){
+                if (option==='yes'){
+                    
+                    document.getElementById('Yes-button').remove();
+                    document.getElementById('No-button').remove();
+                    var newGif = document.getElementById('photo');
+                    newGif.src ='bear-kiss-bear-kisses.gif';
+
+                }   
+                else if (option === 'no'){
+                    var yesButton = document.getElementById("Yes-button");
+                    var noButton = document.getElementById("No-button").innerHTML = 'Are You Sure?...';
+
+                    var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue("font-size");
+                    var newSize = parseFloat(currentFontSize) * 2;
+                    yesButton.style.fontSize = newSize+'px';
+                }    
+                else{
+                    alert('Invalid Option!');
+                }
+            }
+        </script>
+
+
+    </body>
+</html>
